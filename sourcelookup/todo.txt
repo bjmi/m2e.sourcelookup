@@ -1,0 +1,6 @@
+TODO
+
+version bounds of plugin dependencies
+externalize message strings
+own project selection dialog
+remove internal API usage

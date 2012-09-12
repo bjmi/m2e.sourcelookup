@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.debug.core.sourceContainerTypes">
+      <sourceContainerType
+            class="sourcelookup.MyMvnSourceContainerTypeDelegate"
+            id="sourcelookup.myMvnSourceContainerType"
+            name="Maven Dependencies">
+      </sourceContainerType>
+   </extension>
+   
+   <extension
+         point="org.eclipse.debug.ui.sourceContainerPresentations">
+      <sourceContainerPresentation
+            browserClass="sourcelookup.MyMvnSourceContainerBrowser"
+            containerTypeID="sourcelookup.myMvnSourceContainerType"
+            icon="/icons/mvncontainer.gif"
+            id="sourcelookup.myMvnSourceContainerBrowser">
+      </sourceContainerPresentation>
+   </extension>
+
+</plugin>
