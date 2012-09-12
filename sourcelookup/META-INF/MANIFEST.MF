@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Sourcelookup
+Bundle-Name: %bundle.name
 Bundle-SymbolicName: sourcelookup;singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: sourcelookup.Activator
+Bundle-Version: 1.0.1.qualifier
+Bundle-Activator: sourcelookup.internal.SourceLookupPlugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jdt.launching,
  org.eclipse.debug.ui,
@@ -12,3 +12,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jdt.debug.ui
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: %bundle.vendor

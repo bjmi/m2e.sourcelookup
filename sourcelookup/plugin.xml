@@ -6,7 +6,7 @@
       <sourceContainerType
             class="sourcelookup.MyMvnSourceContainerTypeDelegate"
             id="sourcelookup.myMvnSourceContainerType"
-            name="Maven Dependencies">
+            name="%MyMvnSourceContainerTypeDelegate.name">
       </sourceContainerType>
    </extension>
    

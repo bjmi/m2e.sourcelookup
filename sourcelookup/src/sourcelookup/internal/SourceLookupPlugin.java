@@ -1,4 +1,4 @@
-package sourcelookup;
+package sourcelookup.internal;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
@@ -9,17 +9,17 @@ import org.osgi.framework.BundleContext;
  * @author Björn Michael
  * @since 1.0
  */
-public class Activator extends Plugin {
+public class SourceLookupPlugin extends Plugin {
 
   // The shared instance
-  private static Activator plugin;
+  private static SourceLookupPlugin plugin;
 
   /**
    * Returns the shared instance
    * 
    * @return the shared instance
    */
-  public static Activator getInstance() {
+  public static SourceLookupPlugin getInstance() {
     return plugin;
   }
 
