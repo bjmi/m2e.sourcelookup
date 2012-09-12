@@ -6,7 +6,7 @@
 
   <groupId>sourcelookup</groupId>
   <artifactId>sourcelookup</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
 
   <properties>
@@ -54,8 +54,8 @@
           </environments>
         </configuration>
       </plugin>
-
     </plugins>
+
     <pluginManagement>
       <plugins>
         <plugin>
@@ -64,16 +64,19 @@
           <version>${tycho.version}</version>
           <extensions>true</extensions>
         </plugin>
+
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
           <artifactId>tycho-versions-plugin</artifactId>
           <version>${tycho.version}</version>
         </plugin>
+
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
           <artifactId>tycho-packaging-plugin</artifactId>
           <version>${tycho.version}</version>
         </plugin>
+
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
           <artifactId>target-platform-configuration</artifactId>
@@ -85,13 +88,8 @@
 
   <repositories>
     <repository>
-      <id>eclipse</id>
-      <url>http://download.eclipse.org/releases/juno/</url>
-      <layout>p2</layout>
-    </repository>
-    <repository>
-      <id>m2e-extras</id>
-      <url>https://repository.sonatype.org/content/repositories/forge-sites/m2e-extras/0.15.0/N/0.15.0.201206251206/</url>
+      <id>eclipse-indigo</id>
+      <url>http://download.eclipse.org/releases/indigo/</url>
       <layout>p2</layout>
     </repository>
   </repositories>
