@@ -10,10 +10,9 @@
   <packaging>eclipse-plugin</packaging>
 
   <properties>
-    <tycho.version>0.15.0</tycho.version>
+    <tycho.plugin.version>0.15.0</tycho.plugin.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.build.finalName>${project.artifactId}-${unqualifiedVersion}.${buildQualifier}</project.build.finalName>
 
     <maven.compiler.source>1.6</maven.compiler.source>
     <maven.compiler.target>1.6</maven.compiler.target>
@@ -21,6 +20,8 @@
 
   <build>
     <sourceDirectory>src</sourceDirectory>
+    <finalName>${project.artifactId}-${unqualifiedVersion}.${buildQualifier}</finalName>
+
     <plugins>
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
@@ -31,7 +32,7 @@
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-packaging-plugin</artifactId>
         <configuration>
-          <format>yyyyMMdd-HHmmss</format>
+          <format>yyyyMMdd-HHmmss</format> -
         </configuration>
       </plugin>
 
@@ -61,26 +62,26 @@
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
           <artifactId>tycho-maven-plugin</artifactId>
-          <version>${tycho.version}</version>
+          <version>${tycho.plugin.version}</version>
           <extensions>true</extensions>
         </plugin>
 
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
           <artifactId>tycho-versions-plugin</artifactId>
-          <version>${tycho.version}</version>
+          <version>${tycho.plugin.version}</version>
         </plugin>
 
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
           <artifactId>tycho-packaging-plugin</artifactId>
-          <version>${tycho.version}</version>
+          <version>${tycho.plugin.version}</version>
         </plugin>
 
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
           <artifactId>target-platform-configuration</artifactId>
-          <version>${tycho.version}</version>
+          <version>${tycho.plugin.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
