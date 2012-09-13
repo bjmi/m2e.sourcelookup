@@ -8,13 +8,16 @@ import org.eclipse.debug.core.sourcelookup.ISourceContainer;
 import org.eclipse.debug.core.sourcelookup.containers.AbstractSourceContainerTypeDelegate;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
-import org.eclipse.jdt.internal.launching.LaunchingMessages;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
+import sourcelookup.internal.SourceLookupMessages;
+
 /**
  * // TODO (michael) document me
+ * 
+ * TODO(michael) chose a more appropriate class name
  * 
  * @author Björn Michael
  * @since 1.0
@@ -24,17 +27,20 @@ public class MyMvnSourceContainerTypeDelegate extends AbstractSourceContainerTyp
   static final String TYPE_ID = "sourcelookup.myMvnSourceContainerType";
 
   private static final String MVNCONTAINER = "mvncontainer";
-  private static final String PROJECT_NAME = "name";
+
+  private static final String PROJECT_NAME = "projectName";
 
   @Override
   public ISourceContainer createSourceContainer(final String memento) throws CoreException {
     final Node node = parseDocument(memento);
+
     if (node.getNodeType() == Node.ELEMENT_NODE) {
       final Element element = (Element) node;
+
       if (MVNCONTAINER.equals(element.getNodeName())) {
         final String string = element.getAttribute(PROJECT_NAME);
         if (string == null || string.length() == 0) {
-          abort(LaunchingMessages.JavaProjectSourceContainerTypeDelegate_5, null);
+          abort(SourceLookupMessages.MyMvnSourceContainerTypeDelegate_NameIsMissing, null);
         }
 
         final IWorkspace workspace = ResourcesPlugin.getWorkspace();
@@ -43,9 +49,11 @@ public class MyMvnSourceContainerTypeDelegate extends AbstractSourceContainerTyp
 
         return new MyMvnSourceContainer(javaProject);
       }
-      abort(LaunchingMessages.JavaProjectSourceContainerTypeDelegate_6, null);
+
+      abort(SourceLookupMessages.MyMvnSourceContainerTypeDelegate_ProjectNameIsMissing, null);
     }
-    abort(LaunchingMessages.JavaProjectSourceContainerTypeDelegate_7, null);
+
+    abort(SourceLookupMessages.MyMvnSourceContainerTypeDelegate_InvalidFormat, null);
 
     return null;
   }
