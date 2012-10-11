@@ -32,7 +32,7 @@
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-packaging-plugin</artifactId>
         <configuration>
-          <format>yyyyMMdd-HHmmss</format> -
+          <format>yyyyMMdd-HHmmss</format>
         </configuration>
       </plugin>
 
