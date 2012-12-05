@@ -6,7 +6,7 @@
 
   <groupId>sourcelookup</groupId>
   <artifactId>sourcelookup</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.1.1-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
 
   <properties>
@@ -91,6 +91,11 @@
     <repository>
       <id>eclipse-indigo</id>
       <url>http://download.eclipse.org/releases/indigo/</url>
+      <layout>p2</layout>
+    </repository>
+    <repository>
+      <id>m2e-release</id>
+      <url>http://download.eclipse.org/technology/m2e/releases/</url>
       <layout>p2</layout>
     </repository>
   </repositories>

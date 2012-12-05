@@ -3,12 +3,11 @@ package sourcelookup;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.debug.core.ILaunchConfiguration;
-import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.sourcelookup.ISourceContainer;
 import org.eclipse.debug.core.sourcelookup.ISourceContainerType;
 import org.eclipse.debug.core.sourcelookup.containers.CompositeSourceContainer;
+import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 import org.eclipse.jdt.launching.IRuntimeClasspathEntry;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.jdt.launching.StandardClasspathProvider;
@@ -53,8 +52,8 @@ class MyMvnSourceContainer extends CompositeSourceContainer {
 
   @Override
   protected ISourceContainer[] createSourceContainers() throws CoreException {
-    return fromJavaClasspathContainer();
-    // return fromMavenClasspathContainer();
+    return fromMavenSourcePathProvider();
+    // return fromJavaRuntimeResolver();
   }
 
   IJavaProject getJavaProject() {
@@ -65,41 +64,43 @@ class MyMvnSourceContainer extends CompositeSourceContainer {
     return jp.getElementName();
   }
 
-  private ISourceContainer[] fromJavaClasspathContainer() throws CoreException {
-    final ILaunchConfiguration launchConfiguration = getDirector().getLaunchConfiguration();
+  private ISourceContainer[] fromJavaRuntimeResolver() throws CoreException {
+    for (final IClasspathEntry cpe : jp.getRawClasspath()) {
+      if (IClasspathEntry.CPE_CONTAINER == cpe.getEntryKind() && //
+          IClasspathManager.CONTAINER_ID.equals(cpe.getPath().toString())) {
+        final IRuntimeClasspathEntry newRuntimeContainerClasspathEntry = JavaRuntime.newRuntimeContainerClasspathEntry(
+            cpe.getPath(), IRuntimeClasspathEntry.USER_CLASSES, jp);
 
-    final ILaunchConfigurationWorkingCopy wc = launchConfiguration.getWorkingCopy();
-    wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, getProjectName());
-    final ILaunchConfiguration doSave = wc.doSave();
+        final IRuntimeClasspathEntry[] resolveRuntimeClasspathEntry = JavaRuntime.resolveRuntimeClasspathEntry(
+            newRuntimeContainerClasspathEntry, jp);
+
+        // there is only one maven2 classpath container in a project return
+        return JavaRuntime.getSourceContainers(resolveRuntimeClasspathEntry);
+      }
+    }
+
+    return new ISourceContainer[0];
+  }
+
+  private ISourceContainer[] fromMavenSourcePathProvider() throws CoreException {
 
     final IRuntimeClasspathEntry mavenEntry = JavaRuntime.newRuntimeContainerClasspathEntry(new Path(
         IClasspathManager.CONTAINER_ID), IRuntimeClasspathEntry.USER_CLASSES);
 
+    final ILaunchConfiguration launchConfiguration = getDirector().getLaunchConfiguration();
+    // final ILaunchConfigurationWorkingCopy wc = launchConfiguration.getWorkingCopy();
+    // wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, getProjectName());
+    // final ILaunchConfiguration doSave = wc.doSave();
+    final ILaunchConfiguration javaProjectLaunchConfiguration = new JavaProjectLaunchConfiguration(launchConfiguration,
+        this);
+
     final IRuntimeClasspathEntry[] resolved = mavenRuntimeClasspathProvider.resolveClasspath(
-        new IRuntimeClasspathEntry[]{
-          mavenEntry
-        }, doSave);
+        new IRuntimeClasspathEntry[]{mavenEntry}, javaProjectLaunchConfiguration);
 
     // final IRuntimeClasspathEntry[] entries = JavaRuntime.computeUnresolvedSourceLookupPath(doSave);
     // final IRuntimeClasspathEntry[] resolved = JavaRuntime.resolveSourceLookupPath(entries, doSave);
 
     return JavaRuntime.getSourceContainers(resolved);
   }
-
-  /*
-   * not needed atm private ISourceContainer[] fromMavenClasspathContainer() throws CoreException { for (final
-   * IClasspathEntry cpe : jp.getRawClasspath()) { if (IClasspathEntry.CPE_CONTAINER == cpe.getEntryKind() && //
-   * MAVEN_CLASSPATH_CONTAINER_ID.equals(cpe.getPath().toString())) { final IRuntimeClasspathEntry
-   * newRuntimeContainerClasspathEntry = JavaRuntime.newRuntimeContainerClasspathEntry( cpe.getPath(),
-   * IRuntimeClasspathEntry.USER_CLASSES, jp);
-   * 
-   * final IRuntimeClasspathEntry[] resolveRuntimeClasspathEntry = JavaRuntime.resolveRuntimeClasspathEntry(
-   * newRuntimeContainerClasspathEntry, jp);
-   * 
-   * // there is only one maven2 classpath container in a project return
-   * JavaRuntime.getSourceContainers(resolveRuntimeClasspathEntry); } }
-   * 
-   * return new ISourceContainer[0]; }
-   */
 
 }
