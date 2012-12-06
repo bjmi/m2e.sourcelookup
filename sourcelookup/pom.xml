@@ -20,7 +20,7 @@
 
   <build>
     <sourceDirectory>src</sourceDirectory>
-    <finalName>${project.artifactId}_${unqualifiedVersion}.${buildQualifier}</finalName>
+    <finalName>${project.artifactId}_${unqualifiedVersion}.v${buildQualifier}</finalName>
 
     <plugins>
       <plugin>
