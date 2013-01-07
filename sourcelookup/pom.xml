@@ -10,7 +10,7 @@
   <packaging>eclipse-plugin</packaging>
 
   <properties>
-    <tycho.plugin.version>0.15.0</tycho.plugin.version>
+    <tycho.plugin.version>0.16.0</tycho.plugin.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
