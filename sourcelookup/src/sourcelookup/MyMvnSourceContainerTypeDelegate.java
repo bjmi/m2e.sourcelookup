@@ -40,7 +40,7 @@ public class MyMvnSourceContainerTypeDelegate extends AbstractSourceContainerTyp
       if (MVNCONTAINER.equals(element.getNodeName())) {
         final String string = element.getAttribute(PROJECT_NAME);
         if (string == null || string.length() == 0) {
-          abort(SourceLookupMessages.MyMvnSourceContainerTypeDelegate_NameIsMissing, null);
+          abort(SourceLookupMessages.MyMvnSourceContainerTypeDelegate_ProjectNameIsMissing, null);
         }
 
         final IWorkspace workspace = ResourcesPlugin.getWorkspace();
@@ -50,7 +50,7 @@ public class MyMvnSourceContainerTypeDelegate extends AbstractSourceContainerTyp
         return new MyMvnSourceContainer(javaProject);
       }
 
-      abort(SourceLookupMessages.MyMvnSourceContainerTypeDelegate_ProjectNameIsMissing, null);
+      abort(SourceLookupMessages.myMvnSourceContainerTypeDelegate_ContainerIsMissing, null);
     }
 
     abort(SourceLookupMessages.MyMvnSourceContainerTypeDelegate_InvalidFormat, null);

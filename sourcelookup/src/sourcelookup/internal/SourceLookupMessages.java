@@ -17,11 +17,11 @@ public final class SourceLookupMessages {
 
   public static String MyMvnSourceContainerBrowser_Dialog_Title;
 
-  public static String MyMvnSourceContainerTypeDelegate_NameIsMissing;
-
-  public static String MyMvnSourceContainerTypeDelegate_ProjectNameIsMissing;
+  public static String myMvnSourceContainerTypeDelegate_ContainerIsMissing;
 
   public static String MyMvnSourceContainerTypeDelegate_InvalidFormat;
+
+  public static String MyMvnSourceContainerTypeDelegate_ProjectNameIsMissing;
 
   private static final String BUNDLE_NAME = "sourcelookup.internal.SourceLookupMessages";
 
