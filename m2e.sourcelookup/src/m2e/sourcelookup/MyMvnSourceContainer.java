@@ -1,4 +1,6 @@
-package sourcelookup;
+package m2e.sourcelookup;
+
+import m2e.sourcelookup.internal.SourceLookupMessages;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Path;
@@ -14,8 +16,6 @@ import org.eclipse.jdt.launching.StandardClasspathProvider;
 import org.eclipse.m2e.jdt.IClasspathManager;
 import org.eclipse.m2e.jdt.internal.launch.MavenSourcePathProvider;
 import org.eclipse.osgi.util.NLS;
-
-import sourcelookup.internal.SourceLookupMessages;
 
 /**
  * Compute and provide source containers from a maven managed java project.

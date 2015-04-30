@@ -1,4 +1,4 @@
-package sourcelookup;
+package m2e.sourcelookup;
 
 import java.util.List;
 import java.util.Map;

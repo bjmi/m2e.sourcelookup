@@ -3,24 +3,24 @@
    <extension
          point="org.eclipse.debug.core.sourceContainerTypes">
       <sourceContainerType
-            class="sourcelookup.MyMvnSourceContainerTypeDelegate"
-            id="sourcelookup.myMvnSourceContainerType"
+            class="m2e.sourcelookup.MyMvnSourceContainerTypeDelegate"
+            id="m2e.sourcelookup.MyMvnSourceContainerType"
             name="%MyMvnSourceContainerTypeDelegate.name">
       </sourceContainerType>
    </extension>
    <extension
          point="org.eclipse.debug.ui.sourceContainerPresentations">
       <sourceContainerPresentation
-            browserClass="sourcelookup.MyMvnSourceContainerBrowser"
-            containerTypeID="sourcelookup.myMvnSourceContainerType"
+            browserClass="m2e.sourcelookup.MyMvnSourceContainerBrowser"
+            containerTypeID="m2e.sourcelookup.MyMvnSourceContainerType"
             icon="/icons/mvncontainer.gif"
-            id="sourcelookup.myMvnSourceContainerBrowser">
+            id="m2e.sourcelookup.MyMvnSourceContainerBrowser">
       </sourceContainerPresentation>
    </extension>
    <extension
          point="org.eclipse.debug.core.sourceLocators">
       <sourceLocator
-            class="sourcelookup.MyMvnSourceLocator"
+            class="m2e.sourcelookup.MyMvnSourceLocator"
             id="org.eclipse.m2e.launching.MavenSourceLocator"
             name="%MyMvnSourceLocator.name">
       </sourceLocator>
