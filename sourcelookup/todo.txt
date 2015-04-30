@@ -2,3 +2,7 @@ TODO
 
 own project selection dialog
 remove internal API usage
+
+
+m2e releases repository - http://download.eclipse.org/technology/m2e/releases/
+http://repository.takari.io:8081/nexus/content/sites/m2e.extras/m2e/1.5.0/N/LATEST/

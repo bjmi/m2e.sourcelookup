@@ -19,9 +19,9 @@ import sourcelookup.internal.SourceLookupMessages;
 
 /**
  * Compute and provide source containers from a maven managed java project.
- * 
+ *
  * TODO(michael) chose a more appropriate class name
- * 
+ *
  * @author Björn Michael
  * @since 1.0
  */
@@ -68,8 +68,8 @@ class MyMvnSourceContainer extends CompositeSourceContainer {
     for (final IClasspathEntry cpe : jp.getRawClasspath()) {
       if (IClasspathEntry.CPE_CONTAINER == cpe.getEntryKind() && //
           IClasspathManager.CONTAINER_ID.equals(cpe.getPath().toString())) {
-        final IRuntimeClasspathEntry newRuntimeContainerClasspathEntry = JavaRuntime.newRuntimeContainerClasspathEntry(
-            cpe.getPath(), IRuntimeClasspathEntry.USER_CLASSES, jp);
+        final IRuntimeClasspathEntry newRuntimeContainerClasspathEntry = JavaRuntime.newRuntimeContainerClasspathEntry(cpe.getPath(),
+            IRuntimeClasspathEntry.USER_CLASSES, jp);
 
         final IRuntimeClasspathEntry[] resolveRuntimeClasspathEntry = JavaRuntime.resolveRuntimeClasspathEntry(
             newRuntimeContainerClasspathEntry, jp);
@@ -79,23 +79,23 @@ class MyMvnSourceContainer extends CompositeSourceContainer {
       }
     }
 
-    return new ISourceContainer[0];
+    return new ISourceContainer[] {};
   }
 
   private ISourceContainer[] fromMavenSourcePathProvider() throws CoreException {
 
-    final IRuntimeClasspathEntry mavenEntry = JavaRuntime.newRuntimeContainerClasspathEntry(new Path(
-        IClasspathManager.CONTAINER_ID), IRuntimeClasspathEntry.USER_CLASSES);
+    final IRuntimeClasspathEntry mavenEntry = JavaRuntime.newRuntimeContainerClasspathEntry(new Path(IClasspathManager.CONTAINER_ID),
+        IRuntimeClasspathEntry.USER_CLASSES);
 
     final ILaunchConfiguration launchConfiguration = getDirector().getLaunchConfiguration();
     // final ILaunchConfigurationWorkingCopy wc = launchConfiguration.getWorkingCopy();
     // wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, getProjectName());
     // final ILaunchConfiguration doSave = wc.doSave();
-    final ILaunchConfiguration javaProjectLaunchConfiguration = new JavaProjectLaunchConfiguration(launchConfiguration,
-        this);
+    final ILaunchConfiguration javaProjectLaunchConfiguration = new JavaProjectLaunchConfiguration(launchConfiguration, this);
 
-    final IRuntimeClasspathEntry[] resolved = mavenRuntimeClasspathProvider.resolveClasspath(
-        new IRuntimeClasspathEntry[]{mavenEntry}, javaProjectLaunchConfiguration);
+    final IRuntimeClasspathEntry[] resolved = mavenRuntimeClasspathProvider.resolveClasspath(new IRuntimeClasspathEntry[] {
+      mavenEntry
+    }, javaProjectLaunchConfiguration);
 
     // final IRuntimeClasspathEntry[] entries = JavaRuntime.computeUnresolvedSourceLookupPath(doSave);
     // final IRuntimeClasspathEntry[] resolved = JavaRuntime.resolveSourceLookupPath(entries, doSave);
