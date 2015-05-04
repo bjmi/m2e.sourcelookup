@@ -12,12 +12,9 @@
   </parent>
   <artifactId>bjmi.m2e.sourcelookup</artifactId>
   <packaging>eclipse-plugin</packaging>
-  <properties>
-
-  </properties>
   <build>
     <sourceDirectory>src</sourceDirectory>
-    <finalName>${project.artifactId}_${unqualifiedVersion}.${buildQualifier}</finalName>
+<!--     <finalName>${project.artifactId}_${unqualifiedVersion}.${buildQualifier}</finalName> -->
     <plugins>
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
@@ -26,9 +23,6 @@
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-packaging-plugin</artifactId>
-        <configuration>
-          <format>'v'yyyyMMdd-HHmmss</format>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.eclipse.tycho</groupId>

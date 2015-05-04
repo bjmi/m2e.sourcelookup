@@ -2,9 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <prerequisites>
-    <maven>3.0.3</maven>
-  </prerequisites>
+  <prerequisites><maven>3.0.3</maven></prerequisites>
   <groupId>bjmi.m2e.sourcelookup</groupId>
   <artifactId>bjmi.m2e.sourcelookup-parent</artifactId>
   <version>1.1.4-SNAPSHOT</version>
@@ -21,14 +19,12 @@
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
   <build>
     <plugins>
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-maven-plugin</artifactId>
       </plugin>
-
     </plugins>
     <pluginManagement>
       <plugins>
@@ -59,14 +55,17 @@
         </plugin>
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
-          <artifactId>tycho-maven-plugin</artifactId>
+          <artifactId>tycho-compiler-plugin</artifactId>
           <version>${tycho.plugin.version}</version>
-          <extensions>true</extensions>
+          <configuration>
+            <useJDK>BREE</useJDK>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
-          <artifactId>tycho-compiler-plugin</artifactId>
+          <artifactId>tycho-maven-plugin</artifactId>
           <version>${tycho.plugin.version}</version>
+          <extensions>true</extensions>
         </plugin>
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
@@ -80,17 +79,11 @@
             </dependency>
           </dependencies>
           <configuration>
+            <format>'v'yyyyMMdd-HHmmss</format>
+            <jgit.dirtyWorkingTree>error</jgit.dirtyWorkingTree>
+            <jgit.ignore>pom.xml</jgit.ignore>
             <timestampProvider>jgit</timestampProvider>
-            <jgit.dirtyWorkingTree>warning</jgit.dirtyWorkingTree>
-            <jgit.ignore>
-              pom.xml
-            </jgit.ignore>
           </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.eclipse.tycho</groupId>
-          <artifactId>tycho-versions-plugin</artifactId>
-          <version>${tycho.plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
@@ -100,6 +93,21 @@
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
           <artifactId>tycho-p2-plugin</artifactId>
+          <version>${tycho.plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-p2-publisher-plugin</artifactId>
+          <version>${tycho.plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-p2-repository-plugin</artifactId>
+          <version>${tycho.plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-versions-plugin</artifactId>
           <version>${tycho.plugin.version}</version>
         </plugin>
         <plugin>

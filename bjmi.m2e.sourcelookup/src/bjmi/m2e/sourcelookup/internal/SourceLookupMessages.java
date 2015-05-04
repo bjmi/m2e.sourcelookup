@@ -4,9 +4,9 @@ import org.eclipse.osgi.util.NLS;
 
 /**
  * Eclipse messages for l10n.
- * 
+ *
  * <strong>Messages key declaration must NOT contain final.</strong>
- * 
+ *
  * @author Björn Michael
  * @since 1.1
  */
@@ -23,7 +23,7 @@ public final class SourceLookupMessages {
 
   public static String MyMvnSourceContainerTypeDelegate_ProjectNameIsMissing;
 
-  private static final String BUNDLE_NAME = "m2e.sourcelookup.internal.SourceLookupMessages";
+  private static final String BUNDLE_NAME = "bjmi.m2e.sourcelookup.internal.SourceLookupMessages";
 
   static {
     NLS.initializeMessages(BUNDLE_NAME, SourceLookupMessages.class);
