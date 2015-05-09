@@ -1,4 +1,4 @@
-package m2e.sourcelookup.internal;
+package bjmi.m2e.sourcelookup.internal;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;

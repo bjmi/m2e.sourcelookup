@@ -1,10 +1,7 @@
-package m2e.sourcelookup;
+package bjmi.m2e.sourcelookup;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import m2e.sourcelookup.internal.SourceLookupMessages;
-import m2e.sourcelookup.internal.SourceLookupPlugin;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspaceRoot;
@@ -24,6 +21,9 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.m2e.core.MavenPlugin;
 import org.eclipse.m2e.core.project.IMavenProjectFacade;
 import org.eclipse.swt.widgets.Shell;
+
+import bjmi.m2e.sourcelookup.internal.SourceLookupMessages;
+import bjmi.m2e.sourcelookup.internal.SourceLookupPlugin;
 
 /**
  * // TODO (michael) document me TODO(michael) chose a more appropriate class name

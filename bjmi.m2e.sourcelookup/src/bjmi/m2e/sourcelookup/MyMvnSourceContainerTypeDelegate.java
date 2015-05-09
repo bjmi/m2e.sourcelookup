@@ -1,6 +1,4 @@
-package m2e.sourcelookup;
-
-import m2e.sourcelookup.internal.SourceLookupMessages;
+package bjmi.m2e.sourcelookup;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspace;
@@ -14,8 +12,10 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
+import bjmi.m2e.sourcelookup.internal.SourceLookupMessages;
+
 /**
- * // TODO (michael) document me
+ * TODO (michael) document me
  *
  * TODO(michael) chose a more appropriate class name
  *
@@ -24,7 +24,7 @@ import org.w3c.dom.Node;
  */
 public class MyMvnSourceContainerTypeDelegate extends AbstractSourceContainerTypeDelegate {
 
-  static final String TYPE_ID = "m2e.sourcelookup.MyMvnSourceContainerType";
+  static final String TYPE_ID = "bjmi.m2e.sourcelookup.MyMvnSourceContainerType";
 
   private static final String MVNCONTAINER = "mvncontainer";
 

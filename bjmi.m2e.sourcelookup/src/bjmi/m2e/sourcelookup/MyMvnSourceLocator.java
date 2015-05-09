@@ -1,4 +1,4 @@
-package m2e.sourcelookup;
+package bjmi.m2e.sourcelookup;
 
 import org.eclipse.debug.core.sourcelookup.ISourceLookupDirector;
 import org.eclipse.debug.core.sourcelookup.ISourceLookupParticipant;
