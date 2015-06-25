@@ -7,7 +7,7 @@
   <prerequisites><maven>3.0.3</maven></prerequisites>
   <groupId>bjmi.m2e.sourcelookup</groupId>
   <artifactId>bjmi.m2e.sourcelookup-parent</artifactId>
-  <version>1.1.4-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <properties>
@@ -16,7 +16,7 @@
     <install.plugin.version>2.5.2</install.plugin.version>
     <resources.plugin.version>2.7</resources.plugin.version>
     <site.plugin.version>3.4</site.plugin.version>
-    <tycho.plugin.version>0.22.0</tycho.plugin.version>
+    <tycho.plugin.version>0.23.0</tycho.plugin.version>
     <versions.plugin.version>2.2</versions.plugin.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -82,7 +82,7 @@
           </dependencies>
           <configuration>
             <format>'v'yyyyMMdd-HHmmss</format>
-            <jgit.dirtyWorkingTree>error</jgit.dirtyWorkingTree>
+            <jgit.dirtyWorkingTree>warning</jgit.dirtyWorkingTree>
             <jgit.ignore>pom.xml</jgit.ignore>
             <timestampProvider>jgit</timestampProvider>
           </configuration>
@@ -122,14 +122,15 @@
   </build>
   <repositories>
     <repository>
-      <id>eclipse-luna</id>
-      <url>http://download.eclipse.org/releases/luna/</url>
+      <id>eclipse-mars</id>
+      <url>http://download.eclipse.org/releases/mars/</url>
       <layout>p2</layout>
     </repository>
-    <repository>
-      <id>m2e-release</id>
-      <url>http://download.eclipse.org/technology/m2e/releases/</url>
-      <layout>p2</layout>
-    </repository>
+<!-- use m2e 1.6 from mars repo -->
+<!--     <repository> -->
+<!--       <id>m2e-release</id> -->
+<!--       <url>http://download.eclipse.org/technology/m2e/releases/</url> -->
+<!--       <layout>p2</layout> -->
+<!--     </repository> -->
   </repositories>
 </project>
