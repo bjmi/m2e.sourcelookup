@@ -22,8 +22,8 @@ Contributors:
 Igor Fedorenko - initial API and implementation\n
    </copyright>
 
-   <license url="http://www.eclipse.org/legal/epl-v10.html">
-      EPL
+   <license url="%feature.license.url">
+      %feature.license.text
    </license>
 
    <requires>
