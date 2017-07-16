@@ -11,11 +11,10 @@
     <relativePath>../bjmi.m2e.sourcelookup-parent/pom.xml</relativePath>
   </parent>
   <artifactId>bjmi.m2e.sourcelookup</artifactId>
-  <version>1.1.5-SNAPSHOT</version>
+  <version>1.1.6-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
   <build>
     <sourceDirectory>src</sourceDirectory>
-<!--     <finalName>${project.artifactId}_${unqualifiedVersion}.${buildQualifier}</finalName> -->
     <plugins>
       <plugin>
         <groupId>org.eclipse.tycho</groupId>

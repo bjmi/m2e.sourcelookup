@@ -2,24 +2,15 @@
 <feature
       id="bjmi.m2e.sourcelookup.feature"
       label="%feature.name"
-      version="1.1.5.qualifier"
+      version="1.1.6.qualifier"
       provider-name="%feature.vendor">
 
    <description>
-      TODO Allows Eclipse Java debugger lookup sources of Java classes .
-Sources are looked up among Eclipse workspace
-projects.
+      %feature.description.text
    </description>
 
    <copyright>
-      Copyright (c) 2015 Björn Michael
-All rights reserved. This program and the accompanying materials
-are made available under the terms of the Eclipse Public License
-v1.0
-which accompanies this distribution, and is available at
-http://www.eclipse.org/legal/epl-v10.html
-Contributors:
-Igor Fedorenko - initial API and implementation\n
+      %feature.copyright.text
    </copyright>
 
    <license url="%feature.license.url">
