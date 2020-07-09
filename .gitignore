@@ -1,3 +1,7 @@
 .*
 !.gitignore
+bin/
 target/
+
+.idea/
+*.iml

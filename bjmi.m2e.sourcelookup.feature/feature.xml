@@ -2,7 +2,7 @@
 <feature
       id="bjmi.m2e.sourcelookup.feature"
       label="%feature.name"
-      version="1.1.6.qualifier"
+      version="1.2.0.qualifier"
       provider-name="%feature.vendor">
 
    <description>

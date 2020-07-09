@@ -2,11 +2,11 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %bundle.name
 Bundle-SymbolicName: bjmi.m2e.sourcelookup;singleton:=true
-Bundle-Version: 1.1.6.qualifier
+Bundle-Version: 1.2.0.qualifier
 Bundle-Activator: bjmi.m2e.sourcelookup.internal.SourceLookupPlugin
 Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.7.0,4.0.0)",
  org.eclipse.ui;bundle-version="[3.7.0,4.0.0)",
- org.eclipse.debug.ui;bundle-version="[3.7.0,4.0.0)",
+ org.eclipse.debug.ui;bundle-version="[3.13.0,4.0.0)",
  org.eclipse.jdt.core;bundle-version="[3.7.0,4.0.0)",
  org.eclipse.jdt.debug.ui;bundle-version="[3.6.0,4.0.0)",
  org.eclipse.jdt.launching;bundle-version="[3.6.0,4.0.0)",

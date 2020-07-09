@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>bjmi.m2e.sourcelookup</groupId>
-    <artifactId>bjmi.m2e.sourcelookup-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <relativePath>./bjmi.m2e.sourcelookup-parent/pom.xml</relativePath>
-  </parent>
-  <artifactId>bjmi.m2e.sourcelookup-reactor</artifactId>
-  <packaging>pom</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>bjmi.m2e.sourcelookup</groupId>
+        <artifactId>bjmi.m2e.sourcelookup-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>bjmi.m2e.sourcelookup-parent/pom.xml</relativePath>
+    </parent>
+    <artifactId>bjmi.m2e.sourcelookup-reactor</artifactId>
+    <packaging>pom</packaging>
 
-  <modules>
-    <module>bjmi.m2e.sourcelookup</module>
-    <module>bjmi.m2e.sourcelookup.feature</module>
-    <module>bjmi.m2e.sourcelookup.repository</module>
-  </modules>
+    <modules>
+        <module>bjmi.m2e.sourcelookup</module>
+        <module>bjmi.m2e.sourcelookup-parent</module>
+        <module>bjmi.m2e.sourcelookup.feature</module>
+        <module>bjmi.m2e.sourcelookup.repository</module>
+        <module>target-definition</module>
+    </modules>
 </project>
